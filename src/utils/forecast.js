@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
             } else if(response.body.error) {
                 callback('Could not fetch forecast.');
             } else {
-                callback(undefined, response.body.daily.data[0].summary + ' It is currently: ' + response.body.currently.temperature + ' degrees celsius.');
+                callback(undefined, response.body.daily.data[0].summary + ' It is currently: ' + response.body.currently.temperature + ' degrees celsius. \nThe daily temperate low is ' + response.body.daily.data[0].temperatureLow + '. The daily temperatue high is ' + response.body.daily.data[0].temperatureHigh + '.');
             }
     });
 }
